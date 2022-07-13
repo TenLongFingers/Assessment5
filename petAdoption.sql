@@ -1,0 +1,6 @@
+CREATE TABLE pets(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    species VARCAR(100) NOT NULL,
+    age INTEGER
+)
