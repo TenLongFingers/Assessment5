@@ -1,4 +1,3 @@
-require("dotenv").config();
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
@@ -23,7 +22,15 @@ module.exports = {
                 name varchar
             );
 
-            *****YOUR CODE HERE*****
+CREATE TABLE cities (
+  city_id SERIAL, PRIMARY KEY,
+  name VARCHAR(50),
+  rating INTEGER,
+  country_id INTEGER,
+  SELECT country_id
+    FROM countries
+    JOIN cities.country_id = countries.country_id;
+)
 
             insert into countries (name)
             values ('Afghanistan'),
