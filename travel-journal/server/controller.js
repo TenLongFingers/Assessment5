@@ -258,7 +258,7 @@ const createCity = (req, res) => {
 const getCities = (req, res) => {
   sequelize
     .query(
-      `SELECT name AS city, city_id, rating FROM cities JOIN country_id, name AS country ON cities.country = countries.country`;
+      `SELECT name AS city, city_id, rating FROM cities JOIN country_id, name AS country ON cities.country = countries.country;`
     )
     .then((dbRes = res.statues(200).send))
     .catch((err) => console.log("error getting cities", err));
